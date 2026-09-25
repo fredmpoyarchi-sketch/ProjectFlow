@@ -1,5 +1,5 @@
-from responsable import Responsable
-from tache import Tache
+from models.responsable import Responsable
+from models.tache import Tache
 
 
 class Projet:

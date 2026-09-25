@@ -1,3 +1,5 @@
+from exceptions.exceptions import TacheInvalideError
+
 class Tache:
     """Représente une tâche appartenant à un projet."""
 
@@ -34,7 +36,7 @@ class Tache:
             ValueError: Si le titre est vide.
         """
         if not nouveau_titre.strip():
-            raise ValueError(
+            raise TacheInvalideError(
                 "Le titre de la tâche ne peut pas être vide."
             )
 
@@ -58,7 +60,7 @@ class Tache:
             ValueError: Si la description est vide.
         """
         if not nouvelle_description.strip():
-            raise ValueError(
+            raise TacheInvalideError(
                 "La description de la tâche ne peut pas être vide."
             )
 
@@ -131,7 +133,7 @@ if __name__ == "__main__":
         try:
             tache1.titre = "   "
 
-        except ValueError as erreur:
+        except TacheInvalideError as erreur:
             print(f"Erreur capturée : {erreur}")
 
         # Vérification :
@@ -150,7 +152,7 @@ if __name__ == "__main__":
         try:
             tache1.description = ""
 
-        except ValueError as erreur:
+        except TacheInvalideError as erreur:
             print(f"Erreur capturée : {erreur}")
 
         # Vérification :
@@ -160,5 +162,5 @@ if __name__ == "__main__":
             f"{tache1.description}"
         )
 
-    except ValueError as erreur:
+    except TacheInvalideError as erreur:
         print(f"Erreur lors de la création : {erreur}")
