@@ -13,6 +13,9 @@ class Tache:
 
     def afficher(self) -> None:
         """Affiche les informations de la tâche."""
+
+        statut = "Terminée" if self.terminee else "À faire"
+        
         print(f"Tâche : {self.titre}")
         print(f"Description : {self.description}")
         print(f"Terminée : {self.terminee}")
