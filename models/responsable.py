@@ -1,4 +1,4 @@
-from utilisateur import Utilisateur
+from models.utilisateur import Utilisateur
 
 
 class Responsable(Utilisateur):
